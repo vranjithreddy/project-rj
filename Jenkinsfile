@@ -24,8 +24,10 @@ pipeline {
         }
       }
         stage('npm-install') {
-                steps {   
+                steps {  
+                  withDockerContainer('node') {
                      sh "npm install"
+                   }
                 }
            }
         stage('npm run lint') {
