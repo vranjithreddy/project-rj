@@ -25,7 +25,7 @@ pipeline {
       }
         stage('npm-install') {
                 steps {  
-                  withDockerContainer('node') {
+                  withDockerContainer('node:latest') {
                      sh "npm install"
                    }
                 }
