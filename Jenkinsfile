@@ -28,7 +28,7 @@ pipeline {
            }
         stage('npm run lint') {
                 steps {   
-                     sh "npm run lint"test:onlychanged
+                     sh "npm run lint"
                 }
            }
         stage('npm-install') {
