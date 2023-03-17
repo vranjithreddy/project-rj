@@ -23,8 +23,7 @@ pipeline {
       }
         stage('perform-build') {
                 steps {   
-                        sh 'pwd'
-                        sh 'ls -al'
+                      dockeer build -t project-rj .
                 }
            }
     }
