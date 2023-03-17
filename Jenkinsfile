@@ -31,12 +31,12 @@ pipeline {
                      sh "npm run lint"
                 }
            }
-        stage('npm-install') {
+        stage('npm run test') {
                 steps {   
                      sh "npm run test"
                 }
            }
-        stage('npm-install') {
+        stage('npm run test only changed') {
                 steps {   
                      sh "npm run test:onlychanged"
                 }
