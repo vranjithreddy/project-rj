@@ -11,7 +11,7 @@ def gitCredentials = 'github-cred'
 
 
 pipeline {
-    agent any {}
+    agent any 
 
     stages {
         stage('get-started') {
