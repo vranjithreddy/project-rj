@@ -11,7 +11,7 @@ def gitCredentials = 'github-cred'
 
 
 pipeline {
-    agent { dockerfile true } 
+    agent any //{ dockerfile true } 
 
     stages {
         stage('get-started') {
@@ -21,9 +21,24 @@ pipeline {
             }
         }
       }
-        stage('docker-build') {
+        stage('npm-install') {
                 steps {   
-                     sh "docker build -t project-rj ."
+                     sh "npm install"
+                }
+           }
+        stage('npm run lint') {
+                steps {   
+                     sh "npm run lint"test:onlychanged
+                }
+           }
+        stage('npm-install') {
+                steps {   
+                     sh "npm run test"
+                }
+           }
+        stage('npm-install') {
+                steps {   
+                     sh "npm run test:onlychanged"
                 }
            }
     }
