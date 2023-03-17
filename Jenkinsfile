@@ -23,7 +23,7 @@ pipeline {
       }
         stage('docker-build') {
                 steps {   
-                     sh "dockeer build -t project-rj ."
+                     sh "docker build -t project-rj ."
                 }
            }
     }
