@@ -13,6 +13,8 @@ def gitCredentials = 'github-cred'
 pipeline {
     agent any //{ dockerfile true } 
 
+  tools {nodejs "nodejs"}
+
     stages {
         stage('get-started') {
             steps {
